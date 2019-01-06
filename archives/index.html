@@ -92,7 +92,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="YzApp.net">
-<meta property="og:url" content="http://www.yzapp.net/index.html">
+<meta property="og:url" content="http://www.yzapp.net/archives/index.html">
 <meta property="og:site_name" content="YzApp.net">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="YzApp.net">
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://www.yzapp.net/"/>
+  <link rel="canonical" href="http://www.yzapp.net/archives/"/>
 
 
 
 
 
-  <title>YzApp.net</title>
+  <title>归档 | YzApp.net</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -154,9 +154,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left  page-archive  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -249,222 +247,67 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <section id="posts" class="posts-collapse">
+    <span class="archive-move-on"></span>
+
+    <span class="archive-page-counter">
+      
+      
+      
+        
+      
+      嗯..! 目前共计 1 篇日志。 继续努力。
+    </span>
+
     
+
+      
+      
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.yzapp.net/2017/04/08/hexo-git/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FlowFish">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YzApp.net">
-    </span>
-
-    
-      <header class="post-header">
-
+      
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/08/hexo-git/" itemprop="url">
-                  用Hexo搭建Github独立博客
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-08T15:37:43+08:00">
-                2017-04-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+        <div class="collection-title">
+          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
         </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
       
       
 
       
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-          
-            <p>网站前端技术在Node.js推出后是日新月异，稍不留神就落伍了。一直用jQuery.js写前端，挺好的，也很方便，仿佛一夜之间，到处都是听没听过的新术语，react.js, vue.js各种各样的前端脚手架。原来的技术仿佛都失效了，无所适从，无从下手。</p>
-<p>好在Google还在，那颗愿意学习的心还在，学呗，还能怎么办？</p>
-<p>此文记录一下配置的过程。就像上面所说的，技术日新月异，建站的过程参考了很多技术文章，发现和现在的技术都有小的出入，对于一个专家来说，这都不是个事。但对于Step by Step的新手，发现例子上的命令没有用，会有很大的困惑。希望本文对正在建站的小白有所帮助。</p>
-<p>本文所提到的命令执行时间为：2017-4-18，版本都是当前最新稳定版。本文就像食品一样有保质期，遗憾的是我不清楚保质期多长。</p>
-<p>1.申请Github账号，生成原始博客(Github Pages)</p>
-<p>(1)注册网址：<a href="https://github.com/" target="_blank" rel="external">https://github.com/</a></p>
-<p>(2)生成原始博客(Github Pages)：在github上建立一个仓库（New Repository）</p>
-<p>project name：[username].github.io</p>
-<p>注：Github Pages的Repository名字是特定的，比如Github账号是yourname，那么Github Pages Repository名字就是yourname.github.io。</p>
-<p>2.绑定独立域名(可选)</p>
-<pre><code>在Repository的根目录下面，新建一个名为CNAME的文本文件，里面写入你要绑定的域名。
-
-DNS指向[username].github.io的IP。
-</code></pre><p>3.本地环境（Windows）</p>
-<p>(1)安装软件</p>
-<p><a href="http://nodejs.org" target="_blank" rel="external">Node.js</a><br><a href="http://git-scm.com/" target="_blank" rel="external">git</a></p>
-<p>(2)配置<br>node.js:</p>
-<pre><code>安装cnmp: $ npm install -g cnpm --registry=https://registry.npm.taobao.org
-</code></pre><p>git:</p>
-<pre><code>检查SSH keys的设置：
-%HOMEPATH%\.ssh
-
-生成新的SSH Key：
-
-$ ssh-keygen -t rsa -C &quot;邮件地址@youremail.com&quot;  //命令区分大小写
-Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好&gt;
-
-然后系统会要你输入密码：
-
-Enter passphrase (empty for no passphrase):&lt;输入加密串&gt;
-Enter same passphrase again:&lt;再次输入加密串&gt;
-
-添加SSH Key到GitHub
-
-在本机设置SSH Key之后，需要添加到GitHub上，以完成SSH链接的设置。
-
-1、打开本地%HOMEPATH%\.ssh\id_rsa.pub文件，复制公钥内容。
-2、登陆github系统。点击头像--&gt;Settings---&gt;SSH and GPG keys ---&gt; New SSH key
-3、Title可以输入邮箱或公钥电脑名等（无所谓），key把你本地生成的公钥复制到里面， 点击 Add SSH key。
-
-测试
-
-可以输入下面的命令，看看设置是否成功，git@github.com的部分不要修改：
-
-$ ssh -T git@github.com
-如果是下面的反馈：
-
-The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established.
-RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
-Are you sure you want to continue connecting (yes/no)?
-不要紧张，输入yes就好，然后会看到：
-
-Hi cnfeat! You&apos;ve successfully authenticated, but GitHub does not provide shell access.
-
-设置用户信息
-
-现在你已经可以通过SSH链接到GitHub了，还有一些个人信息需要完善的。
-
-Git会根据用户的名字和邮箱来记录提交。GitHub也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的，名字必须是你的真名，而不是GitHub的昵称。
-
-$ git config --global user.name &quot;用户名&quot;//用户名
-$ git config --global user.email  &quot;邮箱&quot;//填写自己的邮箱
-</code></pre><p>4.安装Hexo</p>
-<pre><code>$ cnpm install -g hexo
-blogPath\hexo init
-blogPath\npm install
-blogPath\cnpm install hexo-deployer-git --save
-
-预览：
-blogPath\hexo generate
-blogPath\hexo server    
-然后到浏览器输入localhost:4000看看。
-</code></pre><p>5.Hexo基本配置<br>    部署到Github前需要配置_config.yml文件，首先找到下面的内容</p>
-<pre><code># Deployment
-## Docs: http://hexo.io/docs/deployment.html
-deploy:
-type:
-# Deployment
-
-## Docs: http://hexo.io/docs/deployment.html
-deploy:
-type: github
-repository: git@github.com:yourusername/yourusername.github.io.git
-branch: master
-
-NOTE1:
-
-Repository：必须是SSH形式的url（git@github.com:yourusername/yourusername.github.io.git），
-而不能是HTTPS形式的url（https://github.com/yourusername/yourusername.github.io.git），否则会出现错误。 
-</code></pre><p>6.Hexo常用命令<br>    创建文章:  blogPath\hexo new “bolgfilename”    //才关闭预览，再执行，否则会出现两个相同的博文<br>    编辑文章： 文本编辑器（最好支持makedown语法）打开blogPath\source_posts\bolgfilename.md,进行编辑<br>    删除文章：<br>        删除blogPath\source_posts\blogfilename.md<br>        hexo clean<br>    生成发布：<br>        blogPath\hexo generate<br>        blogPath\Git Bash $ hexo deploy        //输入SSH Key加密字符串</p>
-<p>7.Hexo修改模板<br>    未完待续…</p>
-
-          
+            <a class="post-title-link" href="/2017/04/08/hexo-git/" itemprop="url">
+              
+                <span itemprop="name">用Hexo搭建Github独立博客</span>
+              
+            </a>
         
-      
-    </div>
+      </h1>
 
-    <div>
-      
-    </div>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-04-08T15:37:43+08:00"
+              content="2017-04-08" >
+          04-08
+        </time>
+      </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    </header>
   </article>
 
 
+
     
+
   </section>
 
   
+
 
 
           </div>
@@ -649,6 +492,12 @@ Repository：必须是SSH形式的url（git@github.com:yourusername/yourusername
   
 
   
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
+
 
   
 

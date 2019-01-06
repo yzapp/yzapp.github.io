@@ -90,12 +90,22 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="YzApp.net">
-<meta property="og:url" content="http://www.yzapp.net/index.html">
+<meta name="description" content="网站前端技术在Node.js推出后是日新月异，稍不留神就落伍了。一直用jQuery.js写前端，挺好的，也很方便，仿佛一夜之间，到处都是听没听过的新术语，react.js, vue.js各种各样的前端脚手架。原来的技术仿佛都失效了，无所适从，无从下手。
+好在Google还在，那颗愿意学习的心还在，学呗，还能怎么办？
+此文记录一下配置的过程。就像上面所说的，技术日新月异，建站的过程参考了很多技术文章">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用Hexo搭建Github独立博客">
+<meta property="og:url" content="http://www.yzapp.net/2017/04/08/hexo-git/index.html">
 <meta property="og:site_name" content="YzApp.net">
+<meta property="og:description" content="网站前端技术在Node.js推出后是日新月异，稍不留神就落伍了。一直用jQuery.js写前端，挺好的，也很方便，仿佛一夜之间，到处都是听没听过的新术语，react.js, vue.js各种各样的前端脚手架。原来的技术仿佛都失效了，无所适从，无从下手。
+好在Google还在，那颗愿意学习的心还在，学呗，还能怎么办？
+此文记录一下配置的过程。就像上面所说的，技术日新月异，建站的过程参考了很多技术文章">
+<meta property="og:updated_time" content="2017-04-22T08:17:45.978Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YzApp.net">
+<meta name="twitter:title" content="用Hexo搭建Github独立博客">
+<meta name="twitter:description" content="网站前端技术在Node.js推出后是日新月异，稍不留神就落伍了。一直用jQuery.js写前端，挺好的，也很方便，仿佛一夜之间，到处都是听没听过的新术语，react.js, vue.js各种各样的前端脚手架。原来的技术仿佛都失效了，无所适从，无从下手。
+好在Google还在，那颗愿意学习的心还在，学呗，还能怎么办？
+此文记录一下配置的过程。就像上面所说的，技术日新月异，建站的过程参考了很多技术文章">
 
 
 
@@ -123,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://www.yzapp.net/"/>
+  <link rel="canonical" href="http://www.yzapp.net/2017/04/08/hexo-git/"/>
 
 
 
 
 
-  <title>YzApp.net</title>
+  <title>用Hexo搭建Github独立博客 | YzApp.net</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -154,9 +164,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -249,9 +257,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -281,10 +289,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/04/08/hexo-git/" itemprop="url">
-                  用Hexo搭建Github独立博客
-                </a>
+                用Hexo搭建Github独立博客
               
             
           </h1>
@@ -334,9 +339,7 @@
       
 
       
-        
-          
-            <p>网站前端技术在Node.js推出后是日新月异，稍不留神就落伍了。一直用jQuery.js写前端，挺好的，也很方便，仿佛一夜之间，到处都是听没听过的新术语，react.js, vue.js各种各样的前端脚手架。原来的技术仿佛都失效了，无所适从，无从下手。</p>
+        <p>网站前端技术在Node.js推出后是日新月异，稍不留神就落伍了。一直用jQuery.js写前端，挺好的，也很方便，仿佛一夜之间，到处都是听没听过的新术语，react.js, vue.js各种各样的前端脚手架。原来的技术仿佛都失效了，无所适从，无从下手。</p>
 <p>好在Google还在，那颗愿意学习的心还在，学呗，还能怎么办？</p>
 <p>此文记录一下配置的过程。就像上面所说的，技术日新月异，建站的过程参考了很多技术文章，发现和现在的技术都有小的出入，对于一个专家来说，这都不是个事。但对于Step by Step的新手，发现例子上的命令没有用，会有很大的困惑。希望本文对正在建站的小白有所帮助。</p>
 <p>本文所提到的命令执行时间为：2017-4-18，版本都是当前最新稳定版。本文就像食品一样有保质期，遗憾的是我不清楚保质期多长。</p>
@@ -429,20 +432,27 @@ Repository：必须是SSH形式的url（git@github.com:yourusername/yourusername
 </code></pre><p>6.Hexo常用命令<br>    创建文章:  blogPath\hexo new “bolgfilename”    //才关闭预览，再执行，否则会出现两个相同的博文<br>    编辑文章： 文本编辑器（最好支持makedown语法）打开blogPath\source_posts\bolgfilename.md,进行编辑<br>    删除文章：<br>        删除blogPath\source_posts\blogfilename.md<br>        hexo clean<br>    生成发布：<br>        blogPath\hexo generate<br>        blogPath\Git Bash $ hexo deploy        //输入SSH Key加密字符串</p>
 <p>7.Hexo修改模板<br>    未完待续…</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
@@ -450,21 +460,22 @@ Repository：必须是SSH形式的url（git@github.com:yourusername/yourusername
       
 
       
-
+        
       
 
       
+
       
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -472,6 +483,10 @@ Repository：必须是SSH形式的url（git@github.com:yourusername/yourusername
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -649,6 +664,10 @@ Repository：必须是SSH形式的url（git@github.com:yourusername/yourusername
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
 
   
 
